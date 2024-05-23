@@ -4,7 +4,7 @@ metadata:
   name: mysql-svc
 spec:
   selector:
-    app: mysql  # Replace "mysql" with the actual label on your Pods
+    app: mysql  
   ports:
   - protocol: TCP
     port: 3306
