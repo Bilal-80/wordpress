@@ -1,10 +1,10 @@
 apiVersion: v1 
-kind: PersistantVolumeClaim
+kind: PersistentVolumeClaim
 metadata:
   name: wp-pvc
 spec:
   accessModes:
-    - ReadWiteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi

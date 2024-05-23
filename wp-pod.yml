@@ -8,13 +8,13 @@ spec:
       image: wordpress:latest
       ports:
         - containerPort: 80
-      env:
-        - name: WORDPRESS_DB_HOST
-          value: db
-        - name: WORDPRESS_DB_USER
-          value: exampleuser
-        - name: WORDPRESS_DB_PASSWORD
-          value: examplepass
-        - name: WORDPRESS_DB_NAME
-          value: exampledb
-      imagePullPolicy: Always
+      envFrom:
+        - configMapRef:
+            name: wp-cm
+        - secretRef:
+            name: wp-secret
+      imagePullPolicy: Always 
+  volumes:
+    - name: wordpress-storage
+      persistentVolumeClaim:
+        claimName: wp-pvc

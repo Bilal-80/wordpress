@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: mysql-cm
 data:
-  MYSQL_ROOT_PASSWORD: admin
-  MYSQL_DATABASE: mydatabase
-  MYSQL_USER: myuser
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: admin
+
